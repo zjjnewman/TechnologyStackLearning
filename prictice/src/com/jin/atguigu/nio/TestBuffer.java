@@ -7,6 +7,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
 /**
+ * NIO 本地 IO
  * NIO https://www.bilibili.com/video/BV14W411u7ro?p=2
  *
  * 一、缓冲区（buffer）：在Java NIO中负责数据的存取。缓冲区就是数组用于存储不同数据类型的数组
@@ -21,23 +22,22 @@ import java.nio.ByteBuffer;
  *
  *
  * 二、缓冲区存取数据的两个核心方法
- * put()：存入数据到缓冲区
- * get()：读取缓冲区的数据
+ *      put()：存入数据到缓冲区
+ *      get()：读取缓冲区的数据
  *
  * 四、缓冲区中的四个核心属性
- * capacity：容量，表示缓冲区中最大存储数据的容量。一旦生命不能改变
- * limit：界限，表示缓冲区中可以操作数据的大小。（limit指针后的数据，不能读写）
- * position：位置，表示缓冲区中正在操作数据的位置。
+ *      capacity：容量，表示缓冲区中最大存储数据的容量。一旦生命不能改变
+ *      limit：界限，表示缓冲区中可以操作数据的大小。（limit指针后的数据，不能读写）
+ *      position：位置，表示缓冲区中正在操作数据的位置。
+ *      mark：标记，表示记录当前position的位置，可以通过reset()恢复到mark的位置
  *
- * mark：标记，表示记录当前position的位置，可以通过reset()恢复到mark的位置
- *
- * 0 <= mark <= position <= limit <= capacity
+ *      0 <= mark <= position <= limit <= capacity
  *
  * 五、直接缓冲区与非直接缓冲区：
- * 非直接缓冲区：通过 allocate() 方法分配缓冲区，将缓冲区建立在JVM内存
- * 直接缓冲区：通过 allocateDirect() 方法分配缓冲区，将缓冲区建立在物理内存中。
+ *      非直接缓冲区：通过 allocate() 方法分配缓冲区，将缓冲区建立在JVM内存
+ *      直接缓冲区：通过 allocateDirect() 方法分配缓冲区，将缓冲区建立在物理内存中。只有ByteBuffer支持
  *      1.适用场景，适合 数据长时间在内存中操作
- *      2.直接内存文件弊端：1.开辟空间较为耗费资源。
+ *      2.直接内存缓冲区：1.开辟空间较为耗费资源。
  *                      2.数据写进去之后就不归 程序管了，什么时候写回磁盘由操作系统控制。
  *                      3.垃圾回收机制 才可以使 jvm指向直接内存的指针断开
  *
@@ -46,8 +46,9 @@ public class TestBuffer {
 
     @Test
     public void test3(){
+        // 分配直接缓冲区----还有一种方式直接内存文件（通道）
         ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
-
+        System.out.println(buffer.isDirect());
     }
 
     @Test
