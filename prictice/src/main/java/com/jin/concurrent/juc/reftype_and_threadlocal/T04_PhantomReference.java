@@ -1,6 +1,4 @@
-package com.jin.juc.reftype_and_threadlocal;
-
-import sun.tools.asm.CatchData;
+package com.jin.concurrent.juc.reftype_and_threadlocal;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.Reference;
@@ -8,7 +6,6 @@ import java.lang.ref.ReferenceQueue;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * PhantomReference 虚引用，管理直接内存，在新版的JVM支持直接内存引用，

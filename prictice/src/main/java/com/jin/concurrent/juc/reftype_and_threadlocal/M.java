@@ -1,4 +1,4 @@
-package com.jin.juc.reftype_and_threadlocal;
+package com.jin.concurrent.juc.reftype_and_threadlocal;
 
 public class M {
     @Override
