@@ -3,6 +3,9 @@ package com.jin.atguigu.nio;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
+import java.net.DatagramSocket;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.nio.Buffer;
 import java.nio.CharBuffer;
 import java.nio.MappedByteBuffer;
@@ -34,12 +37,14 @@ import java.util.SortedMap;
  * 三、获取 通道对象 的 3 种方式：
  *      1. Java 针对支持通道的类提供了 getChannel() 方法
  *          本地IO:
- *              FileInputSstream/FileOutputStream
- *              RandomAccessFile
+ *              {@link FileInputStream}
+ *              {@link FileOutputStream}
+ *              {@link RandomAccessFile}
  *          网络IO:
- *              Socket
- *              ServerSocket
- *              DatagramSocket
+ *              {@link Socket}
+ *              {@link ServerSocket}
+ *              {@link DatagramSocket}
+ *
  *      2. 在 JDK1.7 中的 NIO.2 针对各个通道提供了静态方法 open()
  *      3. 在 JDK1.7 中的 NIO.2 的Files工具类的 newByteChannel()
  *
