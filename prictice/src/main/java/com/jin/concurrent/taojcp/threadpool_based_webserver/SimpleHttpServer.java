@@ -9,7 +9,6 @@ import java.net.Socket;
 /**
  * 4-21
  *
- * {@link java.util.concurrent.FutureTask}
  *
  * {@link java.util.concurrent.Executors}
  *
@@ -37,6 +36,11 @@ import java.net.Socket;
  *
  *
  * {@link java.util.Timer}
+ *
+ * {@link java.util.concurrent.ArrayBlockingQueue}
+ * {@link java.util.concurrent.LinkedBlockingQueue}
+ * {@link java.util.concurrent.PriorityBlockingQueue}
+ * {@link java.util.concurrent.SynchronousQueue}
  *
  */
 public class SimpleHttpServer {
