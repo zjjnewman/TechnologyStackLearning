@@ -64,6 +64,16 @@
             <version>3.3.0</version>
         </dependency>
 
+<!--        google guava实现的布隆过滤器-->
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+
+
+
     </dependencies>
 
 

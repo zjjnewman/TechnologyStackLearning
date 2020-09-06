@@ -17,6 +17,7 @@ class ProxyDemo{
         // 动态代理
         LawyerProxyDynamicByJDK lawyerProxy = new LawyerProxyDynamicByJDK(new ZhangSan());
         Speaker speaker1 = (Speaker) Proxy.newProxyInstance(ProxyDemo.class.getClassLoader(),new Class[]{Speaker.class}, lawyerProxy);
+        System.out.println(speaker1.getClass().getName());
         speaker1.speak();
 
         //CGLib 第三方动态代理

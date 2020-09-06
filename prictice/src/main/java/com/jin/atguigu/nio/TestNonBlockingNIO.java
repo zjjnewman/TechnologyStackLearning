@@ -147,6 +147,12 @@ public class TestNonBlockingNIO {
                         System.out.println(new String(byteBuffer.array(), 0, len));
                         byteBuffer.clear();
                     }
+                } else if(selectionKey.isWritable()){
+
+                } else if (selectionKey.isValid()){
+
+                } else if(selectionKey.isValid()){
+
                 }
                 // 15.接受完其中一个通道的数据，就取消其选择键，从轮询列表里面移除，否则就会一直有效。
                 keyIterator.remove();
